@@ -11,6 +11,13 @@ ARViz in an RViz implementation for Augmented Reality. This application runs ins
 
 This project is based on the works of Esteve Fernández (esteve@apache.org) collected in the repository https://github.com/esteve/ros2_dotnet . This project is funded by [ROSIN](http://rosin-project.eu/) as a focused Technical Project.
 
+Project mantainers:
+* David Vargas (dvargas@inrobots.es)
+* Francisco Martín (fmrico@gmail.com)
+
+Advisor:
+* Esteve Fernández (esteve@apache.org)
+
 ## Compilation of ROS2 C# UWP DLLs
 
 ### Compiling ament 
