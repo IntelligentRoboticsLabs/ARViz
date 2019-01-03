@@ -2,7 +2,7 @@
 
 Intelligent Robotics http://intelligentrobotics.es/ @IntellRobotLabs 
 
-ARViz in an RViz implementation for Augmented Reality. This application runs inside the Microsoft Hololens AR device as a UWP application, without the need to use Ros Bridge. This project has as goal to combine:
+ARViz is an RViz implementation for Augmented Reality. This application runs inside the Microsoft Hololens AR device as a UWP application, without the need to use Ros Bridge. This project has as goal to combine:
 
 * ROS2 C # support for UWP applications on board Microsoft Hololens.
 * TF2 support for ROS C#.
