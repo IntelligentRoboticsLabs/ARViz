@@ -20,7 +20,7 @@ Project mantainers:
 Advisor:
 * Esteve Fernández (esteve@apache.org)
 
-## Compilation of ROS2 C# UWP DLLs
+## Compilation of ROS2 C# UWP 
 
 ### Compiling ament 
 
@@ -31,18 +31,32 @@ vcs import src < ament_dotnet_uwp.repos
 python src\ament\ament_tools\scripts\ament.py build --cmake-args -G "Visual Studio 15 2017 Win64" --
 ```
 
-### Compiling ROS2 with C# for UWP 
+### Compiling ROS2 with C# for UWP32
 
-```md \dev\ros2\src
-cd \dev\ros2
+```md \dev\ros2_uwp\src
+cd \dev\ros2_uwp
 curl -sk https://raw.githubusercontent.com/esteve/ros2_dotnet/master/ros2_dotnet_uwp.repos -o ros2_dotnet_uwp.repos
 vcs import src < ros2_dotnet_uwp.repos
-cd \dev\ros2\src\ros2_dotnet
+cd \dev\ros2_uwp\src\ros2_dotnet
 vcs custom --git --args checkout master || VER>NUL
 cd \dev\ament
 call install\local_setup.bat
-cd \dev\ros2
-ament build --cmake-args -G "Visual Studio 15 2017" -DCMAKE_SYSTEM_NAME=WindowsStore -DCMAKE_SYSTEM_VERSION=10.0.14393 -DTHIRDPARTY=ON -DINSTALL_EXAMPLES=OFF -DCMAKE_FIND_ROOT_PATH="\dev\ament\install;\dev\ros2\install" 
+cd \dev\ros2_uwp
+ament build --cmake-args -G "Visual Studio 15 2017" -DCMAKE_SYSTEM_NAME=WindowsStore -DCMAKE_SYSTEM_VERSION=10.0.14393 -DTHIRDPARTY=ON -DINSTALL_EXAMPLES=OFF -DCMAKE_FIND_ROOT_PATH="\dev\ament\install;\dev\ros2_uwp\install" 
+```
+
+### Compiling ROS2 with C# for Win64 
+
+```md \dev\ros2_win64\src
+cd \dev\ros2_win64
+curl -sk https://raw.githubusercontent.com/esteve/ros2_dotnet/master/ros2_dotnet.repos -o ros2_dotnet.repos
+vcs import src < ros2_dotnet.repos
+cd \dev\ros2_win64\src\ros2_dotnet
+vcs custom --git --args checkout master || VER>NUL
+cd \dev\ament
+call install\local_setup.bat
+cd \dev\ros2_win64
+ament build --cmake-args -G "Visual Studio 15 2017 Win64" -DTHIRDPARTY=ON -DINSTALL_EXAMPLES=OFF -DCMAKE_FIND_ROOT_PATH="\dev\ament\install;\dev\ros2_win64\install" 
 ```
 
 ### Using generated DLLs in your UWP application
