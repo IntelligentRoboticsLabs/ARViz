@@ -9,7 +9,9 @@ ARViz is an RViz implementation for Augmented Reality. This application runs ins
 * Secure communications.
 * Hololens Positioning in the scene.
 
-This project is based on the works of Esteve Fernández (esteve@apache.org) collected in the repository https://github.com/esteve/ros2_dotnet . This project is funded by [ROSIN](http://rosin-project.eu/) as a focused Technical Project.
+This project is based on the works of Esteve Fernández (esteve@apache.org) collected in the repository https://github.com/esteve/ros2_dotnet. You can see his [Talk](https://vimeo.com/293302046) in ROSCon 2018 about this.
+
+This project is funded by [ROSIN](http://rosin-project.eu/) as a focused Technical Project.
 
 Project mantainers:
 * David Vargas (dvargas@inrobots.es)
