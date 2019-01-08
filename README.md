@@ -20,7 +20,7 @@ Project mantainers:
 Advisor:
 * Esteve Fernández (esteve@apache.org)
 
-## Compilation of ROS2 C# UWP 
+## Building ROS2 for UWP
 
 Follow the instructions on [ros2-dotnet](https://github.com/esteve/ros2_dotnet) to compile [ROS2 for UWP](https://github.com/esteve/ros2_dotnet/blob/master/README.md#universal-windows-platform-arm-win32-win64)
 
