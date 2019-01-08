@@ -9,7 +9,7 @@ ARViz is an RViz implementation for Augmented Reality. This application runs ins
 * Secure communications.
 * Hololens Positioning in the scene.
 
-This project is based on the [UWP port of ROS2](https://github.com/esteve/ros2_dotnet) done by [Esteve Fernández](https://github.com/esteve). You can see the talk he gave at ROSCon 2018 about ROS2 for Android, iOS and UWP [Video](https://vimeo.com/293302046) [Slides](https://roscon.ros.org/2018/presentations/ROSCon2018_ROS2%20for%20Android,%20iOS%20and%20Universal%20Windows%20Platform.pdf).
+This project uses the [UWP port of ROS2](https://github.com/esteve/ros2_dotnet) done by [Esteve Fernández](https://github.com/esteve). You can have a look at the talk he gave at ROSCon 2018 about ROS2 for Android, iOS and UWP to understand the underlying code [Video](https://vimeo.com/293302046) [Slides](https://roscon.ros.org/2018/presentations/ROSCon2018_ROS2%20for%20Android,%20iOS%20and%20Universal%20Windows%20Platform.pdf).
 
 This project is funded by [ROSIN](http://rosin-project.eu/) as a focused Technical Project.
 
