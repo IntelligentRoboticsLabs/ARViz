@@ -25,5 +25,30 @@ Advisor:
 Follow the instructions on [ros2-dotnet](https://github.com/esteve/ros2_dotnet) to compile [ROS2 for UWP](https://github.com/esteve/ros2_dotnet/blob/master/README.md#universal-windows-platform-arm-win32-win64)
 
 ### Using generated DLLs in your UWP application
+#### Visual Studio
 
+Create a new Visual Studio project (Visual C# - Windows Universal - Empty app).
+
+In Solution Explorer panel: 
+```
+right click on Universal Windows project - Add - Existing item... 
+```
+and include every DLL file from `{your_ros2_uwp_ws}\install\bin`. Now select all of these files on Solution Explorer and check/set the properties:
+```
+Build action: Content
+Copy to output directory: Copy always
+```
+This allows you to retrieve the files in the same directory as the assembly.
+
+Nest step, in Solution Explorer panel:
+```
+right click on References - Add reference... 
+```
+and include `{your_ros2_uwp_ws}\install\lib\rcldotnet\dotnet\rcldotnet_assemblies.dll`, `{your_ros2_uwp_ws}\install\lib\rcldotnet\dotnet\rcldotnet_common.dll` and `{your_ros2_uwp_ws}\install\lib\std_msgs\dotnet\std_msgs_assemblies.dll`.
+
+Now you can include your ROS2 code in MainPage.xaml.cs script, compile your project and run it on HoloLens Emulator or HoloLens physical device.
+
+#### Unity
+
+Coming soon...
 
