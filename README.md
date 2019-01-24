@@ -48,6 +48,8 @@ and include `{your_ros2_uwp_ws}\install\lib\rcldotnet\dotnet\rcldotnet_assemblie
 Now you can include your ROS2 code in MainPage.xaml.cs script, compile your project and run it on HoloLens Emulator or HoloLens physical device.
 
 ## Using generated DLLs in your UWP application from Unity
+**NOTE: _Tested on `Unity 2018.2.8f1`_**
+
 Create a new Unity project and set up the following editor properties.
 
 ### Build Settings
