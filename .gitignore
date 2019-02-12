@@ -4,8 +4,9 @@ ARVizGUI/[Oo]bj/
 ARVizGUI/[Bb]uild/
 ARVizGUI/[Bb]uilds/
 ARVizGUI/[Ll]ogs/
-./ARVizGUI/App/*
-ARVizGUI/Assets/HoloToolkit*
+ARVizGUI/App
+ARVizGUI/Assets/HoloToolkit
+
 
 # Never ignore Asset meta data
 !ARVizGUI/[Aa]ssets/**/*.meta
