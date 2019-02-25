@@ -31,7 +31,7 @@ https://github.com/esteve/ros2_dotnet
 |---------------|---------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
 | **Milestone 1** |                                                                                                                           |                                                                                                                                         |                             |
 |               | Hololens positioning. Hololens node which publish TF2 messages with the  device position with respect the world  frame.   | Development of TF2 bindings for rcldotnet at https://github.com/IntelligentRoboticsLabs/geometry2.git  (branch:rcldotnet)               | 100 %  :white_check_mark:                    |
-|               | User AR Interface                                                                                                         | Work in progress                                                                                                                        | 75 % :x:                    |
+|               | User AR Interface                                                                                                         | Work in progress                                                                                                                        | 100 %  :white_check_mark:                    |
 |               | Final Development of C# bindings                                                                                          | Development of Nested types and Collections, needed for TF2 bindings, finished. PRs pending in  https://github.com/esteve/ros2_dotnet   | 100 %  :white_check_mark: |
 |               | AR representation of basic types: scalar,  images, pointcloud, laser, TFs, Maps, PoseArray  and Paths                     | Work in progress                                                                                                                        | 75 % :x:                    |
 | **Milestone 2** |                                                                                                                           |                                                                                                                                         |                             |
@@ -42,3 +42,12 @@ https://github.com/esteve/ros2_dotnet
 |               | Unitary and integrations tests                                                                                            |                                                                                                                                         | 0 % :x:                     |
 |               | System final acceptance questionnaire                                                                                     |                                                                                                                                         |                             |
 |               | Final Documentation                                                                                                       | Works in  https://github.com/esteve/ros2_dotnet                                                                                         | 20 % :x:                    |
+
+
+## Videos & demos
+
+### Global positioning system
+
+[![ARViz Hololens Positioning](http://img.youtube.com/vi/lQXtoK3w5X8/0.jpg)](https://www.youtube.com/watch?v=lQXtoK3w5X8 "ARViz Hololens Positioning")
+
+[![ARViz GUI and Data Visualization](http://img.youtube.com/vi/mGTKNB-Iog0/0.jpg)](https://www.youtube.com/watch?v=mGTKNB-Iog0 "ARViz GUI and Data Visualization")
