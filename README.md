@@ -20,6 +20,27 @@ Project mantainers:
 Advisor:
 * Esteve Fernández (esteve@apache.org)
 
+
+***
+<!-- 
+    ROSIN acknowledgement from the ROSIN press kit
+    @ https://github.com/rosin-project/press_kit
+-->
+
+<a href="http://rosin-project.eu">
+  <img src="http://rosin-project.eu/wp-content/uploads/rosin_ack_logo_wide.png" 
+       alt="rosin_logo" height="60" >
+</a>
+
+Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software Components.  
+More information: <a href="http://rosin-project.eu">rosin-project.eu</a>
+
+<img src="http://rosin-project.eu/wp-content/uploads/rosin_eu_flag.jpg" 
+     alt="eu_flag" height="45" align="left" >  
+
+This project has received funding from the European Union’s Horizon 2020  
+research and innovation programme under grant agreement no. 732287. 
+
 ## Building and using ROS2 for UWP
 
 Follow the instructions on [ros2-dotnet](https://github.com/esteve/ros2_dotnet) to compile [ROS2 for UWP](https://github.com/esteve/ros2_dotnet/blob/master/README.md#universal-windows-platform-arm-win32-win64)
@@ -51,3 +72,4 @@ https://github.com/esteve/ros2_dotnet
 [![ARViz Hololens Positioning](http://img.youtube.com/vi/lQXtoK3w5X8/0.jpg)](https://www.youtube.com/watch?v=lQXtoK3w5X8 "ARViz Hololens Positioning")
 
 [![ARViz GUI and Data Visualization](http://img.youtube.com/vi/mGTKNB-Iog0/0.jpg)](https://www.youtube.com/watch?v=mGTKNB-Iog0 "ARViz GUI and Data Visualization")
+
