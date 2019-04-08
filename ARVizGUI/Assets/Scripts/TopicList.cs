@@ -15,8 +15,8 @@ public class TopicList : MonoBehaviour, IPointerClickHandler {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 
     public void changeColor()
     {
@@ -29,4 +29,5 @@ public class TopicList : MonoBehaviour, IPointerClickHandler {
         GameObject gochild = gameObject.transform.GetChild(1).gameObject;
         gochild.SetActive(!gochild.activeSelf);
     }
+
 }
