@@ -17,7 +17,7 @@ public class ARVizManager : MonoBehaviour {
     private Vector3[] meshVerticies;
     private int[] meshTriangles;
     private Color[] meshVertexColors;
-    
+
     private Vector3[] directions = new Vector3[61];
 
     int samples = 61;
@@ -38,15 +38,11 @@ public class ARVizManager : MonoBehaviour {
         3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0 };
     public float[] intensities;
 
-    // Use this for initialization
     void Start () {
-		
-	}
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+  	void Update () {
+  	}
 
     public void canvasClick(string gameobject)
     {
