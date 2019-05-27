@@ -191,7 +191,7 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
         /// </summary>
         public void StopCapture()
         {
-            //Debug.Log("################### Stoping!");
+            Debug.Log("################### StopCapture!");
             capturing = false;
             currentCaptureTimeout = 0;
 
@@ -252,15 +252,22 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
 
         private void HologramOnARuco(int markerId, Vector3 pos, Quaternion rot)
         {
+            Debug.Log("#*#*#*#*#*#*#*#* HologramOnARuco!");
             /*
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.transform.position = pos;
             cube.transform.localScale = Vector3.one * markerSize;
-
+            */
+            /*
             CameraPositionPublisher.AddRobotFrame(pos, rot);
             */
-
+            /*
             Instantiate(cube_topics, pos, rot);
+            */
+
+            TF_test.init_pos = pos;
+            TF_test.init_rot = rot;
+            TF_test.init_info = true;
         }
 
         private void OnDestroy()

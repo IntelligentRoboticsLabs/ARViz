@@ -46,21 +46,14 @@ public class CameraPositionPublisher : MonoBehaviour
     INode node;
     TransformBroadcaster tfbr_;
     std_msgs.msg.String msg;
-    static Vector3 robotPosition;
-    static Quaternion robotRotation;
-    static bool robotDetected;
 
     void Start()
     {
-        robotPosition = new Vector3();
-        robotRotation = new Quaternion();
-        robotDetected = false;
         RCLdotnet.Init();
         node = RCLdotnet.CreateNode("camera_pos_publisher");
         tfbr_ = new TransformBroadcaster(ref node);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (RCLdotnet.Ok())
@@ -84,45 +77,6 @@ public class CameraPositionPublisher : MonoBehaviour
             w2h.Transform.Rotation.W = -Camera.main.transform.rotation.w;
 
             tfbr_.SendTransform(ref w2h);
-
-            if (robotDetected)
-            {
-                geometry_msgs.msg.TransformStamped h2r = new geometry_msgs.msg.TransformStamped();
-                h2r.Header.Frame_id = "/hololens_camera";
-
-                System.Tuple<int, uint> r_ts = RCLdotnet.Now();
-
-                h2r.Header.Stamp.Sec = r_ts.Item1;
-                h2r.Header.Stamp.Nanosec = r_ts.Item2;
-                h2r.Child_frame_id = "/robot";
-
-                h2r.Transform.Translation.X = robotPosition.x;
-                h2r.Transform.Translation.Y = robotPosition.y;
-                h2r.Transform.Translation.Z = robotPosition.z;
-                h2r.Transform.Rotation.X = robotRotation.x;
-                h2r.Transform.Rotation.Y = robotRotation.y;
-                h2r.Transform.Rotation.Z = robotRotation.z;
-                h2r.Transform.Rotation.W = robotRotation.w;
-
-                tfbr_.SendTransform(ref h2r);
-            }
         }
-    }
-
-    public static void AddRobotFrame(Vector3 pos, Quaternion rot)
-    {
-        robotPosition.x = pos.x;
-        robotPosition.y = pos.y;
-        robotPosition.z = pos.z;
-        robotRotation.x = rot.x;
-        robotRotation.y = rot.y;
-        robotRotation.z = rot.z;
-        robotRotation.w = rot.w;
-        robotDetected = true;
-
-        Debug.Log("AddRobotFrame.postion "+pos.x+" "+pos.y+" "+pos.z);
-        Debug.Log("AddRobotFrame.rotation " + rot.x + " " + rot.y + " " + rot.z + " " + rot.w);
-
-        return;
     }
 }

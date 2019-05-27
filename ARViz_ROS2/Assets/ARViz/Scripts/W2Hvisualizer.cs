@@ -43,11 +43,10 @@ public class W2Hvisualizer : MonoBehaviour
         if (RCLdotnet.Ok())
         {
             Debug.Log("RCLdotnet.Ok");
-            System.Tuple<int, uint> ts = RCLdotnet.Now();
             try
             {
                 //tf = tflt_.LookUpLastTransform("/world", "/hololens_camera");
-                tflt_.LookUpTransform("world", "hololens_camera", ts);
+                tflt_.LookUpLastTransform("world", "hololens_camera");
             }
             catch (Exception e)
             {
@@ -57,7 +56,7 @@ public class W2Hvisualizer : MonoBehaviour
             try
             {
                 //tf = tflt_.LookUpLastTransform("/hololens_camera", "/world");
-                tflt_.LookUpTransform("hololens_camera", "world", ts);
+                tflt_.LookUpLastTransform("hololens_camera", "world");
             }
             catch (Exception e)
             {
