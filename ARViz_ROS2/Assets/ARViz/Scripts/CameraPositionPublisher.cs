@@ -60,13 +60,13 @@ public class CameraPositionPublisher : MonoBehaviour
         {
             geometry_msgs.msg.TransformStamped w2h = new geometry_msgs.msg.TransformStamped();
 
-            w2h.Header.Frame_id = "/world";
+            w2h.Header.Frame_id = "world";
 
             System.Tuple<int, uint> ts = RCLdotnet.Now();
 
             w2h.Header.Stamp.Sec = ts.Item1;
             w2h.Header.Stamp.Nanosec = ts.Item2;
-            w2h.Child_frame_id = "/hololens_camera";
+            w2h.Child_frame_id = "hololens_camera";
 
             w2h.Transform.Translation.X = Camera.main.transform.position.z;
             w2h.Transform.Translation.Y = -Camera.main.transform.position.x;
@@ -77,6 +77,8 @@ public class CameraPositionPublisher : MonoBehaviour
             w2h.Transform.Rotation.W = -Camera.main.transform.rotation.w;
 
             tfbr_.SendTransform(ref w2h);
+
+            //Debug.Log("############## CameraPositionPublisher - W2H: " + w2h.Transform.Translation.X + " " + w2h.Transform.Translation.Y + " " + w2h.Transform.Translation.Z);
         }
     }
 }

@@ -19,6 +19,8 @@ public class TF_test : MonoBehaviour
     TransformBroadcaster tfbr_;
     TransformListener tflt_;
 
+    Vector3 W2O;
+
     void Start()
     {
         RCLdotnet.Init();
@@ -27,6 +29,8 @@ public class TF_test : MonoBehaviour
         tfbr_ = new TransformBroadcaster(ref tfbr_node);
         tflt_ = new TransformListener(ref tflt_node);
         updating = false;
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
     }
     
     void Update()
@@ -42,66 +46,65 @@ public class TF_test : MonoBehaviour
             }
             if (updating == true)
             {
-                UpdateTF();
+                PublishW2O();
             }
         }
     }
 
     void InitializeTF(Vector3 pos, Quaternion rot)
     {
-        Instantiate(cube_test, pos, rot);
-        geometry_msgs.msg.TransformStamped h2r = new geometry_msgs.msg.TransformStamped();
-        h2r.Header.Frame_id = "hololens_camera";
-        System.Tuple<int, uint> r_ts = RCLdotnet.Now();
-        h2r.Header.Stamp.Sec = r_ts.Item1;
-        h2r.Header.Stamp.Nanosec = r_ts.Item2;
-        h2r.Child_frame_id = "robot";
-        h2r.Transform.Translation.X = pos.x;
-        h2r.Transform.Translation.Y = pos.y;
-        h2r.Transform.Translation.Z = pos.z;
-        h2r.Transform.Rotation.X = rot.x;
-        h2r.Transform.Rotation.Y = rot.y;
-        h2r.Transform.Rotation.Z = rot.z;
-        h2r.Transform.Rotation.W = rot.w;
-        tfbr_.SendTransform(ref h2r);
+        Instantiate(cube_test, pos, new Quaternion());
+        /*
+        Debug.Log("############## InitializeTF - H2O: " + pos.x + " " + pos.y + " " + pos.z + " " + rot.x + " " + rot.y + " " + rot.z + " " + rot.w);
+        RCLdotnet.SpinOnce(tfbr_node, 500);
+        ROS2.TF2.Transform tf = new ROS2.TF2.Transform();
+        while (tf.Translation_x < 0.0001 && tf.Translation_x > -0.0001)
+        {
+            tf = tflt_.LookUpLastTransform("world", "hololens_camera");
+            Debug.Log("############## Into while - W2H: " + tf.Translation_x);
+            RCLdotnet.SpinOnce(tflt_node, 500);
+        }
+        Debug.Log("############## InitializeTF - W2H: " + tf.Translation_x + " " + tf.Translation_y + " " + tf.Translation_z);
+        W2O = CrossProduct(pos.x, pos.y, pos.z, (float)tf.Translation_x, (float)tf.Translation_y, (float)tf.Translation_z);
+        */
+        W2O = new Vector3(pos.x, pos.y, pos.z);
         updating = true;
     }
-
-    void UpdateTF()
+    
+    void PublishW2O()
     {
         if (RCLdotnet.Ok())
         {
-            RCLdotnet.SpinOnce(tflt_node, 500);
-            ROS2.TF2.Transform tf = tflt_.LookUpLastTransform("world", "robot");
-
-            geometry_msgs.msg.TransformStamped w2r = new geometry_msgs.msg.TransformStamped();
-            w2r.Header.Frame_id = "world";
+            geometry_msgs.msg.TransformStamped w2o = new geometry_msgs.msg.TransformStamped();
+            w2o.Header.Frame_id = "world";
             System.Tuple<int, uint> r_ts2 = RCLdotnet.Now();
-            w2r.Header.Stamp.Sec = r_ts2.Item1;
-            w2r.Header.Stamp.Nanosec = r_ts2.Item2;
-            w2r.Child_frame_id = "robot";
-            w2r.Transform.Translation.X = tf.Translation_x + 0.01;
-            w2r.Transform.Translation.Y = tf.Translation_y + 0.01;
-            w2r.Transform.Translation.Z = tf.Translation_z + 0.01;
-            w2r.Transform.Rotation.X = 1;
-            w2r.Transform.Rotation.Y = 1;
-            w2r.Transform.Rotation.Z = 1;
-            w2r.Transform.Rotation.W = 0;
-            tfbr_.SendTransform(ref w2r);
+            w2o.Header.Stamp.Sec = r_ts2.Item1;
+            w2o.Header.Stamp.Nanosec = r_ts2.Item2;
+            w2o.Child_frame_id = "odom";
+            w2o.Transform.Translation.X = W2O.x;
+            w2o.Transform.Translation.Y = W2O.y;
+            w2o.Transform.Translation.Z = W2O.z;
+            w2o.Transform.Rotation.X = 0;
+            w2o.Transform.Rotation.Y = 0;
+            w2o.Transform.Rotation.Z = 0;
+            w2o.Transform.Rotation.W = 1;
+            tfbr_.SendTransform(ref w2o);
+            RCLdotnet.SpinOnce(tfbr_node, 200);
+            Debug.Log("############## TF_Test - PublishW2O: " + W2O + " at " + r_ts2.Item1 + "." + r_ts2.Item2);
+            //RCLdotnet.Spin(tfbr_node);
         }
-        /*
-        RCLdotnet.SpinOnce(tflt_node, 500);
-        ROS2.TF2.Transform tf = tflt_.LookUpLastTransform("hololens_camera", "robot");
-        Debug.Log("TF H2R: " + tf.Translation_x.ToString() + " " + tf.Translation_y.ToString() + " " + tf.Translation_z.ToString() + " " + tf.Rotation_x.ToString() + " " + tf.Rotation_y.ToString() + " " + tf.Rotation_z.ToString() + " " + tf.Rotation_w.ToString());
-        ROS2.TF2.Transform tf2 = tflt_.LookUpLastTransform("world", "robot");
-        Debug.Log("TF W2R: " + tf2.Translation_x.ToString() + " "+ tf2.Translation_y.ToString() + " " + tf2.Translation_z.ToString() + " " + tf2.Rotation_x.ToString() + " " + tf2.Rotation_y.ToString() + " " + tf2.Rotation_z.ToString() + " " + tf2.Rotation_w.ToString());
-        
-        Debug.Log("TF pos Y: " + tf.Translation_y);
-        Debug.Log("TF pos Z: " + tf.Translation_z);
-        Debug.Log("TF rot X: " + tf.Rotation_x);
-        Debug.Log("TF rot Y: " + tf.Rotation_y);
-        Debug.Log("TF rot Z: " + tf.Rotation_z);
-        Debug.Log("TF rot W: " + tf.Rotation_w);
-        */
     }
+
+    /*
+    Vector3 CrossProduct(float u1, float u2, float u3, float v1, float v2, float v3)
+    {
+        float uvi, uvj, uvk;
+        uvi = u2 * v3 - v2 * u3;
+        uvj = v1 * u3 - u1 * v3;
+        uvk = u1 * v2 - v1 * u2;
+        Vector3 result = new Vector3(uvi, uvj, uvk);
+        Debug.Log("############## CrossProduct " + uvi + " " + uvj + " " + uvk);
+        return result;
+    }
+    */
 }
