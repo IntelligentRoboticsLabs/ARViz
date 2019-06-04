@@ -65,13 +65,14 @@ https://github.com/esteve/ros2_dotnet
 |               | Final Documentation                                                                                                       | Works in  https://github.com/esteve/ros2_dotnet                                                                                         | 20 % :x:                    |
 
 
-## Videos & demos
+## Videos & demos (the images link to the youtube video)
 
 ### Global positioning system
 
 [![ARViz Hololens Positioning](http://img.youtube.com/vi/lQXtoK3w5X8/0.jpg)](https://www.youtube.com/watch?v=lQXtoK3w5X8 "ARViz Hololens Positioning")
 
 [![ARViz GUI and Data Visualization](http://img.youtube.com/vi/mGTKNB-Iog0/0.jpg)](https://www.youtube.com/watch?v=mGTKNB-Iog0 "ARViz GUI and Data Visualization")
+
 
 ### TFs performance demonstration
 
