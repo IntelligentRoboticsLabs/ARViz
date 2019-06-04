@@ -75,7 +75,7 @@ https://github.com/esteve/ros2_dotnet
 
 ### TFs performance demonstration
 
-[![ARViz TF2 demo]](https://youtu.be/QVhvxE6DuYM)
+[![ARViz TF2 demo](http://img.youtube.com/vi/QVhvxE6DuYM/0.jpg)](https://www.youtube.com/watch?v=QVhvxE6DuYM)
 
 
 ### AR UI - Topics and Types
