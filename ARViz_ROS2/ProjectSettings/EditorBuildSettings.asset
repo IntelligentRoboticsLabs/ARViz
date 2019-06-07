@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ARViz/Scenes/TF_demo.unity
-    guid: ab1bf32efd81bbc4588d16b1579fb4f9
+    path: Assets/ARViz/Scenes/Demo_Image.unity
+    guid: 7218290801558a74c8608222b4914705
   m_configObjects: {}
