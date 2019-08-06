@@ -17,7 +17,7 @@ public class DemoImageManager : MonoBehaviour
     {
         RCLdotnet.Init();
         node = RCLdotnet.CreateNode("image_listener");
-
+        /*
         image_sub = node.CreateSubscription<sensor_msgs.msg.CompressedImage>(
             "camera/rgb/image_raw/compressed", msg =>
             {
@@ -26,6 +26,16 @@ public class DemoImageManager : MonoBehaviour
                 ProcessMessage();
             }
         );
+        */
+        image_sub = node.CreateSubscription<sensor_msgs.msg.CompressedImage>(
+            "camera/depth/image_raw/compressed", msg =>
+            {
+                Debug.Log("############## I saw a frame!");
+                imageData = msg.Data.ToArray();
+                ProcessMessage();
+            }
+        );
+        
 
         texture2D = new Texture2D(1, 1);
         meshRenderer.material = new Material(Shader.Find("Standard"));

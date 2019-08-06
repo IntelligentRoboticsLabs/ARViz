@@ -14,7 +14,7 @@ public class TF_test : MonoBehaviour
     public static bool init_info;
 
     bool updating;
-
+    
     INode tfbr_node, tflt_node;
     TransformBroadcaster tfbr_;
     TransformListener tflt_;
