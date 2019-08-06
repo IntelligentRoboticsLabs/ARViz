@@ -425,7 +425,7 @@ namespace HoloToolkit.Unity
                 string certName = Path.GetFileName(certFullPath);
                 string depPath = Path.GetDirectoryName(appFullPath) + @"\Dependencies\x86\";
 
-                // Post it using the REST API
+                // Post it using the REST API 
                 var form = new WWWForm();
 
                 // APPX file
@@ -464,7 +464,7 @@ namespace HoloToolkit.Unity
 
                 // Query
                 string query = string.Format(API_InstallQuery, FinalizeUrl(targetDevice.IP));
-                query += "?package=" + WWW.EscapeURL(fileName);
+                query += "?package=" + UnityWebRequest.EscapeURL(fileName);
 
                 var response = WebRequestPost(query, form, GetBasicAuthHeader(targetDevice));
 
@@ -561,7 +561,7 @@ namespace HoloToolkit.Unity
 
             string query = string.Format("{0}?package={1}",
                 string.Format(API_InstallQuery, FinalizeUrl(targetDevice.IP)),
-                WWW.EscapeURL(appDetails.PackageFullName));
+                UnityWebRequest.EscapeURL(appDetails.PackageFullName));
 
             bool success = WebRequestDelete(query, GetBasicAuthHeader(targetDevice), showDialog);
             MachineName targetMachine = GetMachineName(targetDevice);
@@ -598,8 +598,8 @@ namespace HoloToolkit.Unity
 
             string query = string.Format(API_AppQuery, FinalizeUrl(targetDevice.IP)) +
                 string.Format("?appid={0}&package={1}",
-                WWW.EscapeURL(EncodeTo64(appDetails.PackageRelativeId)),
-                WWW.EscapeURL(appDetails.PackageFullName));
+                UnityWebRequest.EscapeURL(EncodeTo64(appDetails.PackageRelativeId)),
+                UnityWebRequest.EscapeURL(appDetails.PackageFullName));
             WebRequestPost(query, null, GetBasicAuthHeader(targetDevice), false);
 
             return IsAppRunning(PlayerSettings.productName, targetDevice);
@@ -629,7 +629,7 @@ namespace HoloToolkit.Unity
 
             string query = string.Format("{0}?package={1}",
                 string.Format(API_AppQuery, FinalizeUrl(targetDevice.IP)),
-                WWW.EscapeURL(EncodeTo64(appDetails.PackageFullName)));
+                UnityWebRequest.EscapeURL(EncodeTo64(appDetails.PackageFullName)));
 
             bool success = WebRequestDelete(query, GetBasicAuthHeader(targetDevice), showDialog);
             MachineName targetMachine = GetMachineName(targetDevice);
