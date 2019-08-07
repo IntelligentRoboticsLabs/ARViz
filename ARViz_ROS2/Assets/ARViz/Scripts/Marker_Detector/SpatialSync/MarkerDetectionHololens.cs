@@ -316,7 +316,8 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
             HololensPositionPublisher.init_info = true;
             HololensInitPositionPublisher.init_info = true;
             //LaserVisualizer.init_visualization = true;
-            LaserVisualizer_test.init_visualization = true;
+            //LaserVisualizer_test.init_visualization = true;
+            RobotPositionVisualization.init_visualization = true;
             Debug.Log("#*#*#*#*#*#*#*#* HologramOnARuco - END");
         }
 
