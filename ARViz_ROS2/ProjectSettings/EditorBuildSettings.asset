@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/ARViz/Scenes/Experiments/Experiment_1.unity
+  - enabled: 0
+    path: Assets/ARViz/Scenes/MultiRobots.unity
     guid: 8255100d6c7baf0418b69630b6c3761c
+  - enabled: 1
+    path: Assets/ARViz/Scenes/UserInterface.unity
+    guid: 81d52786e155ac547b9430c3d6219a3d
+  - enabled: 0
+    path: Assets/ARViz/Scenes/Experiments/Experiment_2-1_DataVisualization.unity
+    guid: 019772a86b873fe4bae88a7e9dd96303
   m_configObjects: {}

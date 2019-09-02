@@ -27,8 +27,8 @@ public class TopicsVisualizer : MonoBehaviour {
     private IGraph graph;
 
     void Start () {
-        init_info = false;
-        init_pos = new Vector3();
+        init_info = false; // true;
+        init_pos = new Vector3(-3, 0.5f, 1f);
         init_rot = new Quaternion();
         RCLdotnet.Init();
         node = RCLdotnet.CreateNode("drawer");
@@ -36,16 +36,21 @@ public class TopicsVisualizer : MonoBehaviour {
     }
 	
 	void Update () {
-        topics = graph.GetTopicNamesAndTypes(true);
-        ntopics = topics.Count;
-        if ((init_info == true) && (ntopics > 0))
+        if (init_info == true)
         {
-            init_info = false;
-            // TODO: Redibujar cuando se añadan/eliminen topics
+            topics = graph.GetTopicNamesAndTypes(true);
+            ntopics = topics.Count;
             Debug.Log("############## num topics: " + ntopics);
-            Debug.Log("############## init_pos: " + init_pos);
-            Debug.Log("############## init_rot: " + init_rot);
-            BallsCircle(init_pos, init_rot);
+            if (ntopics > 0)
+            {
+                init_info = false;
+
+                // TODO: Redibujar cuando se añadan/eliminen topics
+                
+                Debug.Log("############## init_pos: " + init_pos);
+                Debug.Log("############## init_rot: " + init_rot);
+                BallsCircle(init_pos, init_rot);
+            }
         }
 	}
 
@@ -56,6 +61,7 @@ public class TopicsVisualizer : MonoBehaviour {
         // Place interaction zone with respect to the marker/robot
         // Zero-quaternion so the topics group is exactly vertical
         GameObject interact_go = Instantiate(interaction_zone, pos, new Quaternion());
+        //interact_go.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
         // Place balls in a circle
         for (float a = 0; a < circle_rads; a += arc)
@@ -70,9 +76,17 @@ public class TopicsVisualizer : MonoBehaviour {
         int cnt = 0;
         foreach (KeyValuePair<string, List<string>> pair in topics)
         {
-            interact_go.transform.GetChild(cnt).GetChild(0).transform.Find("Text").GetComponent<TextMesh>().text = pair.Key;
+
+            Debug.Log("############## \t topic: [" + pair.Key + "]");
+            foreach (string type in pair.Value)
+            {
+                Debug.Log("############## \t\t type: [" + type + "]");
+            }
+            interact_go.transform.GetChild(cnt).GetChild(0).transform.Find("PanelTopic").transform.Find("Text").GetComponent<Text>().text = pair.Key;
+            interact_go.transform.GetChild(cnt).GetChild(0).transform.Find("PanelType").transform.Find("Text").GetComponent<Text>().text = pair.Value[0];
             cnt++;
         }
         interact_go.GetComponent<SphereCollider>().radius = circle_radius + ball_radius;
+        interact_go.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 }

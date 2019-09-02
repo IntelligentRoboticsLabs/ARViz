@@ -283,12 +283,8 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
                     StopCapture();
                     SuccessSound.Play();
                     HologramOnARuco(detectedMarkerIds, pos_group, rot_group);
-                    //gameObject.SetActive(false);
-                    Debug.Log("################### AAA");
                     GetComponent<CameraCaptureHololens>().enabled = false;
-                    Debug.Log("################### BBB");
                     GetComponent<MarkerDetectionHololens>().enabled = false;
-                    Debug.Log("################### CCC");
                 }
             }
 #endif
@@ -310,14 +306,17 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
             }
 
             Debug.Log("#*#*#*#*#*#*#*#* HologramOnARuco : pos_group[center_marker_pos].z - pos_group[right_marker_pos].z == " + (pos_group[center_marker_pos].z - pos_group[right_marker_pos].z));
-            
+
+            /*
             HololensPositionPublisher.init_pos = pos_group[center_marker_pos];
             HololensPositionPublisher.init_rot = rot_group[center_marker_pos];
             HololensPositionPublisher.init_info = true;
             HololensInitPositionPublisher.init_info = true;
-            //LaserVisualizer.init_visualization = true;
-            //LaserVisualizer_test.init_visualization = true;
             RobotPositionVisualization.init_visualization = true;
+            */
+            this.transform.Find("Canvas").gameObject.SetActive(false);
+            TopicsVisualizer.init_info = true;
+
             Debug.Log("#*#*#*#*#*#*#*#* HologramOnARuco - END");
         }
 
