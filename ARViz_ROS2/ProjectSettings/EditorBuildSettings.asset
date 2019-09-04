@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/ARViz/Scenes/UserInterface.unity
     guid: 81d52786e155ac547b9430c3d6219a3d
   - enabled: 0
-    path: Assets/ARViz/Scenes/Experiments/Experiment_2-1_DataVisualization.unity
-    guid: 019772a86b873fe4bae88a7e9dd96303
+    path: Assets/ARViz/Scenes/TestScene.unity
+    guid: 739c3468ab300464e9b073c3b27fcdc5
   m_configObjects: {}
