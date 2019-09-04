@@ -26,6 +26,10 @@ public class DataVisualizer : MonoBehaviour
                 Debug.Log("DataVisualizer - RendererImageSensor.startRendering = true");
                 RendererImageSensor.startRendering = true;
                 break;
+            case "nav_msgs::msg::dds_::OccupancyGrid_":
+                Debug.Log("DataVisualizer - RendererMap.startRendering = true");
+                RendererMap.startRendering = true;
+                break;
             default:
                 Debug.Log("DataVisualizer - NADA DETECTADO");
                 break;

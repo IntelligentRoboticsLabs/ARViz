@@ -28,7 +28,7 @@ public class TopicsVisualizer : MonoBehaviour {
 
     void Start () {
         init_info = false; // true;
-        init_pos = new Vector3(-3, 0.5f, 1f);
+        init_pos = new Vector3(0, 0.5f, 1f);
         init_rot = new Quaternion();
         RCLdotnet.Init();
         node = RCLdotnet.CreateNode("drawer");

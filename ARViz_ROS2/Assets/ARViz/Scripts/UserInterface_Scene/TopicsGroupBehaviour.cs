@@ -19,6 +19,7 @@ public class TopicsGroupBehaviour : MonoBehaviour, IManipulationHandler, IInputC
             Minimize();
             RendererImageSensor.stopRendering = true;
             RendererLaserSensor.stopRendering = true;
+            RendererMap.stopRendering = true;
         }
     }
 
@@ -77,29 +78,14 @@ public class TopicsGroupBehaviour : MonoBehaviour, IManipulationHandler, IInputC
             Vector3 goal_pos_from_min = new Vector3(init_pos.x + 0.1f, init_pos.y + 0.1f, init_pos.z);
             if (!isMinimized)
             {
-                Debug.Log("############### Minimize - position " + this_transform.position);
-                Debug.Log("############### Minimize - localPosition " + this_transform.localPosition);
+                //Debug.Log("############### Minimize - position " + this_transform.position);
+                //Debug.Log("############### Minimize - localPosition " + this_transform.localPosition);
                 this_transform.localScale = new Vector3(1, 1, 1) * Mathf.Lerp(0.5f, 0.25f, t);
-                /*
-                this_transform.localPosition = new Vector3(
-                    Mathf.Lerp(init_pos.x, init_pos.x - 0.1f, t), 
-                    Mathf.Lerp(init_pos.y, init_pos.y - 0.1f, t),
-                    init_pos.z);
-                */
-                //transform.position = Vector3.Lerp(init_pos, goal_pos_to_min, t);
                 transform.position = Vector3.MoveTowards(init_pos, goal_pos_to_min, step);
-                //this_transform.GetComponent<MeshRenderer>().enabled = true;
             }
             else
             {
                 this_transform.localScale = new Vector3(1, 1, 1) * Mathf.Lerp(0.25f, 0.5f, t);
-                /*
-                this_transform.localPosition = new Vector3(
-                    Mathf.Lerp(init_pos.x, init_pos.x + 0.1f, t),
-                    Mathf.Lerp(init_pos.y, init_pos.y + 0.1f, t),
-                    init_pos.z);
-                */
-                //transform.position = Vector3.Lerp(init_pos, goal_pos_from_min, t);
                 transform.position = Vector3.MoveTowards(init_pos, goal_pos_from_min, step);
             }
             t += step;
