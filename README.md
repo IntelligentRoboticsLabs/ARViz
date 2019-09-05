@@ -54,14 +54,14 @@ https://github.com/esteve/ros2_dotnet
 |               | Hololens positioning. Hololens node which publish TF2 messages with the  device position with respect the world  frame.   | Finished development of TF2 bindings for rcldotnet at https://github.com/IntelligentRoboticsLabs/geometry2.git  (branch:rcldotnet)               | 100 %  :white_check_mark:                    |
 |               | User AR Interface                                                                                                         | Finished initial version                                                                                                                        | 100 %  :white_check_mark:                    |
 |               | Final Development of C# bindings                                                                                          | Finished development of Nested types and Collections, needed for TF2 bindings, finished. PRs pending in  https://github.com/esteve/ros2_dotnet   | 100 %  :white_check_mark: |
-|               | AR representation of basic types: scalar,  images, pointcloud, laser, TFs, Maps, PoseArray  and Paths                     | **Work in progress**.   PointCloud and PoseArray pending designs.                                                                           | 80 % :x:                    |
+|               | AR representation of basic types: scalar,  images, pointcloud, laser, TFs, Maps, PoseArray  and Paths                     |                                                                            | 100 % :white_check_mark:                    |
 | **Milestone 2** |                                                                                                                           |                                                                                                                                         |                             |
 |               | Integration of data types in rcldotnet                                                                                    |    | 100 % :white_check_mark:  |
 |               | Acceptance tests and final design of user AR Interface                                                                   | **Work in progress**.  Acceptance tests pending.                    | 90 % :x:                     |
 |               | Multi robot in same scene                                                                                                | Multiple robots identified in same scene with minimal initial setup required. | 100 % :white_check_mark:  |
 | **Milestone 3** |                                                                                                                           |                                                                                                                                         |                             |
-|               | Unitary and integrations tests                                                                                            |                                                                                                                                         | 0 % :x:                     |
-|               | System final acceptance questionnaire                                                                                     |                                                                                                                                         |                             |
+|               | Unitary and integrations tests                                                                                            | **Work in progress**                                                                                                                       | 0 % :x:                     |
+|               | System final acceptance questionnaire                                                                                     | **Work in progress**                                                                                                                |                             |
 |               | Final Documentation                                                                                                       | <p> **Work in progress**. Wiki </p> Works in  https://github.com/esteve/ros2_dotnet  | 50 % :x:   |
 
 
@@ -81,5 +81,5 @@ https://github.com/esteve/ros2_dotnet
 
 ### AR UI - Topics and Types
 
-Coming soon...
+[![ARViz UI](http://img.youtube.com/vi/Av-UpGzqmOc/0.jpg)](https://www.youtube.com/watch?v=Av-UpGzqmOc)
 
