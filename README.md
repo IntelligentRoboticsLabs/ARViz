@@ -63,18 +63,41 @@ research and innovation programme under grant agreement no. 732287.
 ## Videos & demos (the images link to the youtube video)
 
 ### Global positioning system
-
+<!--
 [![ARViz Hololens Positioning](http://img.youtube.com/vi/lQXtoK3w5X8/0.jpg)](https://www.youtube.com/watch?v=lQXtoK3w5X8 "ARViz Hololens Positioning")
+-->
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=lQXtoK3w5X8">
+        <img src="http://img.youtube.com/vi/lQXtoK3w5X8/0.jpg" alt="ARViz Hololens Positioning">
+    </a>
+</p>
 
+### ARViz GUI and Data Visualization
+<!--
 [![ARViz GUI and Data Visualization](http://img.youtube.com/vi/mGTKNB-Iog0/0.jpg)](https://www.youtube.com/watch?v=mGTKNB-Iog0 "ARViz GUI and Data Visualization")
-
+-->
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=mGTKNB-Iog0">
+        <img src="http://img.youtube.com/vi/mGTKNB-Iog0/0.jpg" alt="ARViz GUI and Data Visualization">
+    </a>
+</p>
 
 ### TFs performance demonstration
-
+<!--
 [![ARViz TF2 demo](http://img.youtube.com/vi/QVhvxE6DuYM/0.jpg)](https://www.youtube.com/watch?v=QVhvxE6DuYM)
-
+-->
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=QVhvxE6DuYM">
+        <img src="http://img.youtube.com/vi/QVhvxE6DuYM/0.jpg" alt="ARViz TF2 demo">
+    </a>
+</p>
 
 ### AR UI - Topics and Types
-
+<!--
 [![ARViz UI](http://img.youtube.com/vi/Av-UpGzqmOc/0.jpg)](https://www.youtube.com/watch?v=Av-UpGzqmOc)
-
+-->
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=Av-UpGzqmOc">
+        <img src="http://img.youtube.com/vi/Av-UpGzqmOc/0.jpg" alt="ARViz UI">
+    </a>
+</p>
