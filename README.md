@@ -41,28 +41,23 @@ More information: <a href="http://rosin-project.eu">rosin-project.eu</a>
 This project has received funding from the European Union’s Horizon 2020  
 research and innovation programme under grant agreement no. 732287. 
 
-## Building and using ROS2 for UWP
-
-Follow the instructions on [ros2-dotnet](https://github.com/esteve/ros2_dotnet) to compile [ROS2 for UWP](https://github.com/esteve/ros2_dotnet/blob/master/README.md#universal-windows-platform-arm-win32-win64)
-https://github.com/esteve/ros2_dotnet  
-
 ## Development Status
 
-|                  | Task                                                                                                                      | Status                                                                                                                                  | Progress                    |
-|---------------|---------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| **Milestone 1** |                                                                                                                           |                                                                                                                                         |                             |
-|               | Hololens positioning. Hololens node which publish TF2 messages with the  device position with respect the world  frame.   | Finished development of TF2 bindings for rcldotnet at https://github.com/IntelligentRoboticsLabs/geometry2.git  (branch:rcldotnet)               | 100 %  :white_check_mark:                    |
-|               | User AR Interface                                                                                                         | Finished initial version                                                                                                                        | 100 %  :white_check_mark:                    |
-|               | Final Development of C# bindings                                                                                          | Finished development of Nested types and Collections, needed for TF2 bindings, finished. PRs pending in  https://github.com/esteve/ros2_dotnet   | 100 %  :white_check_mark: |
-|               | AR representation of basic types: scalar,  images, pointcloud, laser, TFs, Maps, PoseArray  and Paths                     |                                                                            | 100 % :white_check_mark:                    |
-| **Milestone 2** |                                                                                                                           |                                                                                                                                         |                             |
-|               | Integration of data types in rcldotnet                                                                                    |    | 100 % :white_check_mark:  |
-|               | Acceptance tests and final design of user AR Interface                                                                   | **Work in progress**.  Acceptance tests pending.                    | 90 % :x:                     |
-|               | Multi robot in same scene                                                                                                | Multiple robots identified in same scene with minimal initial setup required. | 100 % :white_check_mark:  |
-| **Milestone 3** |                                                                                                                           |                                                                                                                                         |                             |
-|               | Unitary and integrations tests                                                                                            | **Work in progress.**                                                                                                                       | 0 % :x:                     |
-|               | System final acceptance questionnaire                                                                                     | **Work in progress.**                                                                                                                |                             |
-|               | Final Documentation                                                                                                       | **Work in progress.** [Wiki](https://github.com/IntelligentRoboticsLabs/ARViz/wiki)  | 80 % :x:   |
+|  | Task | Status | Progress |
+|--|--|--|--|
+| **Milestone 1** |  |  |  |
+| | Hololens positioning. Hololens node which publish TF2 messages with the  device position with respect the world  frame. | Finished development of TF2 bindings for rcldotnet at [IntelligentRoboticsLabs geometry2 repo](https://github.com/IntelligentRoboticsLabs/geometry2/tree/rcldotnet) (branch:rcldotnet) | 100 % :white_check_mark:|
+| | User AR Interface | Finished initial version | 100 %  :white_check_mark:|
+| | Final Development of C# bindings | Finished development of Nested types and Collections, needed for TF2 bindings, finished. PRs pending in  https://github.com/esteve/ros2_dotnet | 100 %  :white_check_mark: |
+| | AR representation of basic types: scalar, images, pointcloud, laser, TFs, Maps, PoseArray and Paths | | 100 % :white_check_mark:|
+| **Milestone 2** | | | |
+| | Integration of data types in rcldotnet | | 100 % :white_check_mark: |
+| | Acceptance tests and final design of user AR Interface | **Work in progress.** Acceptance tests pending. | 90 % :x:|
+| | Multi robot in same scene | Multiple robots identified in same scene with minimal initial setup required. | 100 % :white_check_mark: |
+| **Milestone 3** | | | |
+| | Unitary and integrations tests | **Work in progress.** | 0 % :x: |
+| | System final acceptance questionnaire | **Work in progress.** | |
+| | Final Documentation | **Work in progress.** [Wiki](https://github.com/IntelligentRoboticsLabs/ARViz/wiki)  | 80 % :x: |
 
 
 ## Videos & demos (the images link to the youtube video)
