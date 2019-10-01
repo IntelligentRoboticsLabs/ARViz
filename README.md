@@ -45,19 +45,19 @@ research and innovation programme under grant agreement no. 732287.
 
 |  | Task | Status | Progress |
 |--|--|--|--|
-| **Milestone 1** |  |  |  |
-| | Hololens positioning. Hololens node which publish TF2 messages with the  device position with respect the world  frame. | Finished development of TF2 bindings for rcldotnet at [IntelligentRoboticsLabs geometry2 repo](https://github.com/IntelligentRoboticsLabs/geometry2/tree/rcldotnet) (branch:rcldotnet) | 100 % :white_check_mark:|
-| | User AR Interface | Finished initial version | 100 %  :white_check_mark:|
-| | Final Development of C# bindings | Finished development of Nested types and Collections, needed for TF2 bindings, finished. PRs pending in  https://github.com/esteve/ros2_dotnet | 100 %  :white_check_mark: |
-| | AR representation of basic types: scalar, images, pointcloud, laser, TFs, Maps, PoseArray and Paths | | 100 % :white_check_mark:|
-| **Milestone 2** | | | |
-| | Integration of data types in rcldotnet | | 100 % :white_check_mark: |
-| | Acceptance tests and final design of user AR Interface | **Work in progress.** Acceptance tests pending. | 90 % :x:|
-| | Multi robot in same scene | Multiple robots identified in same scene with minimal initial setup required. | 100 % :white_check_mark: |
-| **Milestone 3** | | | |
-| | Unitary and integrations tests | **Work in progress.** | 0 % :x: |
-| | System final acceptance questionnaire | **Work in progress.** | |
-| | Final Documentation | **Work in progress.** [Wiki](https://github.com/IntelligentRoboticsLabs/ARViz/wiki)  | 80 % :x: |
+| **Milestone_1** |  |  |  |
+| | Hololens positioning. Hololens node which publish TF2 messages with the  device position with respect the world  frame. | Finished development of TF2 bindings for rcldotnet at [IntelligentRoboticsLabs geometry2 repo](https://github.com/IntelligentRoboticsLabs/geometry2/tree/rcldotnet) (branch: rcldotnet) | 100%:white_check_mark:|
+| | User AR Interface | Finished initial version | 100%:white_check_mark:|
+| | Final Development of C# bindings | Finished development of Nested types and Collections, needed for TF2 bindings, finished. PRs pending in  https://github.com/esteve/ros2_dotnet | 100%:white_check_mark: |
+| | AR representation of basic types: scalar, images, pointcloud, laser, TFs, Maps, PoseArray and Paths | | 100%:white_check_mark:|
+| **Milestone_2** | | | |
+| | Integration of data types in rcldotnet | | 100%:white_check_mark: |
+| | Acceptance tests and final design of user AR Interface | **Work in progress.** Acceptance tests pending. | 90%:arrows_counterclockwise:|
+| | Multi robot in same scene | Multiple robots identified in same scene with minimal initial setup required. | 100%:white_check_mark: |
+| **Milestone_3** | | | |
+| | Unitary and integrations tests | **Work in progress.** | 10%:arrows_counterclockwise: |
+| | System final acceptance questionnaire | **Work in progress.** | 10%:arrows_counterclockwise: |
+| | Final Documentation | **Work in progress.** [Wiki](https://github.com/IntelligentRoboticsLabs/ARViz/wiki)  | 80%:arrows_counterclockwise: |
 
 
 ## Videos & demos (the images link to the youtube video)
