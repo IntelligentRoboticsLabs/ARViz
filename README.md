@@ -1,7 +1,5 @@
 # ARViz
 
-Intelligent Robotics http://intelligentrobotics.es/ @IntellRobotLabs 
-
 ARViz is an RViz implementation for Augmented Reality. This application runs inside the Microsoft Hololens AR device as a UWP application, without the need to use Ros Bridge. This project has as goal to combine:
 
 
@@ -100,4 +98,12 @@ research and innovation programme under grant agreement no. 732287.
     <a href="https://www.youtube.com/watch?v=Av-UpGzqmOc">
         <img src="http://img.youtube.com/vi/Av-UpGzqmOc/0.jpg" alt="ARViz UI">
     </a>
+</p>
+
+
+***
+<p align="center">
+    <strong>Intelligent Robotics</strong> -  
+    <a href="http://intelligentrobotics.es/"> intelligentrobotics.es </a> - 
+    <a href="https://twitter.com/IntellRobotLabs"> @IntellRobotLabs </a>
 </p>
