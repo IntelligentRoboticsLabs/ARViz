@@ -8,15 +8,13 @@ using UnityEngine.UI;
 
 public class TopicsVisualizer : MonoBehaviour {
 
-    public GameObject topic_ball;
-    public GameObject interaction_zone;
-    //public GameObject topicsGroup;
+    public GameObject topicBall;
+    public GameObject interactionZone;
     float circle_radius;
     public static float ntopics;
     float circle_rads = 2*Mathf.PI;
     float ball_radius = 0.2f;
-
-    // pubic static variables so are accesible from other scripts
+    
     public static Vector3 init_pos;
     public static Quaternion init_rot;
     public static bool init_info;
@@ -26,9 +24,11 @@ public class TopicsVisualizer : MonoBehaviour {
     private Node node;
     private IGraph graph;
 
+    public Vector3 robotInitPosition;
+
     void Start () {
-        init_info = false; // true;
-        init_pos = new Vector3(0, 0.5f, 1f);
+        init_info = false;
+        init_pos = robotInitPosition;
         init_rot = new Quaternion();
         RCLdotnet.Init();
         node = RCLdotnet.CreateNode("drawer");
@@ -58,17 +58,18 @@ public class TopicsVisualizer : MonoBehaviour {
     {
         circle_radius = ntopics / 6 * ball_radius;
         float arc = circle_rads / ntopics;
-        // Place interaction zone with respect to the marker/robot
-        // Zero-quaternion so the topics group is exactly vertical
-        GameObject interact_go = Instantiate(interaction_zone, pos, new Quaternion());
-        //interact_go.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        /*
+         *Place interaction zone with respect to the marker/robot
+         * Zero-quaternion so the topics group is exactly vertical
+         */
+        GameObject interact_go = Instantiate(interactionZone, pos, new Quaternion());
 
-        // Place balls in a circle
+        /* Place balls in a wheel */
         for (float a = 0; a < circle_rads; a += arc)
         {
             float y = circle_radius * Mathf.Sin(a);
             float z = circle_radius * Mathf.Sin((Mathf.PI / 2) - a);
-            GameObject go = Instantiate(topic_ball);
+            GameObject go = Instantiate(topicBall);
             go.transform.parent = interact_go.transform;
             go.transform.localPosition = new Vector3(0, y, z);
             go.transform.rotation = Quaternion.identity;

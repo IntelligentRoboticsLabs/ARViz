@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using ROS2;
+using System;
+using UnityEngine.UI;
+using UnityEditor;
 
 public class RendererImageSensor : MonoBehaviour
 {
@@ -17,6 +20,8 @@ public class RendererImageSensor : MonoBehaviour
     public static bool startRendering;
     public static bool stopRendering;
 
+    public string topic = "camera/rgb/image_raw/compressed";
+
     void Start()
     {
         Debug.Log("ImageSensorRenderer started");
@@ -24,12 +29,12 @@ public class RendererImageSensor : MonoBehaviour
         node = RCLdotnet.CreateNode("image_listener");
 
         quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
-        quad.transform.position = new Vector3(-3, 0, 1);
+        quad.transform.position = new Vector3(0, 0, 1);
         meshRenderer = quad.GetComponent<MeshRenderer>();
         quad.SetActive(false);
 
         image_sub = node.CreateSubscription<sensor_msgs.msg.CompressedImage>(
-            "camera/rgb/image_raw/compressed", msg =>
+            topic, msg =>
             {
                 Debug.Log("############## I saw a frame!");
                 imageData = msg.Data.ToArray();

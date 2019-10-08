@@ -282,6 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e433dad00f6386049a76fda195029064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelMaterialForDataAvailable: {fileID: 2100000, guid: 21ad6d30c856a494a909a19cb4fc25b9,
+    type: 2}
 --- !u!114 &114442282792702858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 21ad6d30c856a494a909a19cb4fc25b9, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -564,18 +566,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1768235142592163938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114318307650000192}
-        m_MethodName: DataVisualization
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &7524669813656313456

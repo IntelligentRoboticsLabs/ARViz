@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/ARViz/Scenes/MultiRobots.unity
     guid: 8255100d6c7baf0418b69630b6c3761c
-  - enabled: 1
+  - enabled: 0
     path: Assets/ARViz/Scenes/UserInterface.unity
     guid: 81d52786e155ac547b9430c3d6219a3d
-  - enabled: 0
-    path: Assets/ARViz/Scenes/TestScene.unity
-    guid: 739c3468ab300464e9b073c3b27fcdc5
+  - enabled: 1
+    path: Assets/ARViz/Scenes/TF2ExampleTurtles.unity
+    guid: ab1bf32efd81bbc4588d16b1579fb4f9
   m_configObjects: {}

@@ -20,6 +20,7 @@ public class TopicsGroupBehaviour : MonoBehaviour, IManipulationHandler, IInputC
             RendererImageSensor.stopRendering = true;
             RendererLaserSensor.stopRendering = true;
             RendererMap.stopRendering = true;
+            RendererPoseArray.stopRendering = true;
         }
     }
 

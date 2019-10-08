@@ -31,6 +31,8 @@ public class RendererLaserSensor : MonoBehaviour
     public static bool startRendering;
     public static bool stopRendering;
 
+    public string topic = "scan";
+
     void Start()
     {
         RCLdotnet.Init();
@@ -39,7 +41,7 @@ public class RendererLaserSensor : MonoBehaviour
         origin = new Vector3(-3, -1, 1);
 
         laser_sub = node.CreateSubscription<sensor_msgs.msg.LaserScan>(
-            "scan", msg =>
+            topic, msg =>
             {
                 //Debug.Log("############## I saw a laser-frame!");
                 angle_min = msg.Angle_min;

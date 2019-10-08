@@ -152,9 +152,7 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
 
         private void Start ()
         {
-            //Debug.Log("################### Starting!");
 #if WINDOWS_UWP
-            //Debug.Log("################### Starting UWP!");
             try
             {
                 OpenCVUtils.CheckOpenCVWrapperHasLoaded();
@@ -177,7 +175,6 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
 
         private void Update()
         {
-            //Debug.Log("################### Updating!");
             if (!capturing || currentCaptureTimeout <= 0)
             {
                 Debug.Log("################### Update MARKERDETECTIONHOLOLENS -> not capturing!");
@@ -185,7 +182,6 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
             }
 
             currentCaptureTimeout -= Time.deltaTime;
-            //Debug.Log("################### currentCaptureTimeout = "+currentCaptureTimeout);
 
             if (currentCaptureTimeout <= 0 && capturing)
             {
@@ -249,7 +245,6 @@ namespace HoloToolkit.Unity.Preview.SpectatorView
         private void ProcessImage(List<byte> imageData, int imageWidth, int imageHeight)
         {
 #if WINDOWS_UWP
-            //Debug.Log("################### ProcessImage!");
             detector.Detect(imageData, imageWidth, imageHeight, markerSize);
             Vector3 pos;
             Quaternion rot;

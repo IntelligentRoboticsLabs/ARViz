@@ -19,21 +19,24 @@ public class RendererMap : MonoBehaviour
     public static bool startRendering;
     public static bool stopRendering;
 
+    public string topic = "map";
+
     void Start()
     {
         RCLdotnet.Init();
         node = RCLdotnet.CreateNode("map_listener");
 
         quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
-        quad.transform.position = new Vector3(0, -1, 3);
+        quad.transform.position = new Vector3(3, -1, -5); // X: 5 , Z: -4
         quad.transform.rotation = Quaternion.Euler(90, 90, 180);
         meshRenderer = quad.GetComponent<MeshRenderer>();
         quad.SetActive(false);
 
         map_sub = node.CreateSubscription<nav_msgs.msg.OccupancyGrid>(
-            "map", msg =>
+            topic, msg =>
             {
                 Debug.Log("############## I saw a map!");
+                Debug.Log("############## Map origin: " + msg.Info.Origin.Position);
                 //imageDataSB = new sbyte[msg.Info.Width * msg.Info.Height];
                 imageDataSB = msg.Data.ToArray();
                 
@@ -47,14 +50,16 @@ public class RendererMap : MonoBehaviour
                 }
                 texture2D.Apply();
                 meshRenderer.material.SetTexture("_MainTex", texture2D);
-                quad.transform.localScale = new Vector3(10, 10, 10);
-                
+                //meshRenderer.material.SetTexture("_BumpMap", texture2D);
+                quad.transform.localScale = new Vector3(29, 29, 19);//(30, 30, 30);
+
                 //CancelInvoke("Spinning");
                 Debug.Log("############## I saw a map and rendered it!");
             }
         );
         texture2D = new Texture2D(250, 250, TextureFormat.RGBA32, false);
-        meshRenderer.material = new Material(Shader.Find("Standard"));
+        //meshRenderer.material = new Material(Shader.Find("Standard"));
+        meshRenderer.material = new Material(Shader.Find("Transparent/Diffuse"));
         startRendering = false;
         stopRendering = false;
     }
