@@ -53,7 +53,7 @@ research and innovation programme under grant agreement no. 732287.
 | | Acceptance tests and final design of user AR Interface | **Work in progress.** Acceptance tests pending. | 90%:arrows_counterclockwise:|
 | | Multi robot in same scene | Multiple robots identified in same scene with minimal initial setup required. | 100%:white_check_mark: |
 | **Milestone_3** | | | |
-| | Unitary and integrations tests | **Work in progress.** | 50%:arrows_counterclockwise: |
+| | Unitary and integrations tests | | 100%:white_check_mark: |
 | | System final acceptance questionnaire | **Work in progress.** | 50%:arrows_counterclockwise: |
 | | Final Documentation | [Wiki](https://github.com/IntelligentRoboticsLabs/ARViz/wiki)  | 100%:white_check_mark: |
 
